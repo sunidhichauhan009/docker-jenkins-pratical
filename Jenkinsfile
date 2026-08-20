@@ -9,9 +9,9 @@ pipeline {
             }
         }
 
-        stage('Check Files') {
+        stage('build') {
             steps {
-                bat 'dir'
+                bat 'docker build -t mywebsite:v1 .'
             }
         }
     }
