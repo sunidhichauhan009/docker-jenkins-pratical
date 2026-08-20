@@ -9,10 +9,13 @@ pipeline {
             }
         }
 
-        stage('build') {
+        stage('Docker Build') {
             steps {
                 bat 'docker build -t mywebsite:v1 .'
             }
         }
+
     }
 }
+  
+
