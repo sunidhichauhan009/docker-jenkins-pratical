@@ -15,6 +15,16 @@ pipeline {
             }
         }
 
+        stage('docker push'){
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'sunidhi002', passwordVariable: '45sdfgh4567dcfvgh5678')]) 
+                {
+                    bat "docker login -u sunidhi002 -p 45sdfgh4567dcfvgh5678
+                    bat 'docker push sunidhi002/mywebsite:v1'
+                }
+            }
+        }
+
     }
 }
   
